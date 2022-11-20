@@ -17,5 +17,3 @@ services:
       - ./data/outputs:/root/data/outputs
     ports:
       - "8088:8088"
-      
-
