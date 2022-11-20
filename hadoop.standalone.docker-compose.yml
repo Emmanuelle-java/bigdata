@@ -1,0 +1,21 @@
+version: "3.1"
+
+services:
+  hadoop-standalone-namenode:
+    build:
+      context: .
+      dockerfile: hadoop.standalone.namenode.Dockerfile
+    image: hadoop-standalone-namenode:1.0
+    container_name: hadoop-standalone-namenode
+    hostname: namenode
+    restart: unless-stopped
+    tty: true
+    env_file:
+      - ./.env
+    volumes:
+      - ./data/inputs:/root/data/inputs
+      - ./data/outputs:/root/data/outputs
+    ports:
+      - "8088:8088"
+      
+
